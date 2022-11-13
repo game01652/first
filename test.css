@@ -1,4 +1,9 @@
-                .top {
+                body {
+                    background-image: url("https://images.colorpea.com/4f8e54ca08a34e469daae498e2fd9929_480.jpg");
+                    background-size: cover;
+                }
+
+　　　　　　　　　.top {
                     color: #120303;
                     font-weight: bold;
                     font-size: 20px;
