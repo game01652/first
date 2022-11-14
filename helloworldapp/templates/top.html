@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}書籍検索{% endblock %}
+
+{% block content %}
+<a href="{% url 'helloworldfunction' %}"><p class="headline">Book Management System</p></a>
+
+<form name="form1" action="{% url 'form' %}" method="post" class="input">
+  {% csrf_token %}  
+  <input type="text" name="param1" class="search" placeholder="Search the books." style="color:black; width:500px; height: 30px;"><br>
+
+    <select name = "option" style="text-align:center;">
+        <option value="TITLE">Title</option>
+        <option value="AUTHOR">Author</option>
+        <option value="PUBLISHER">Publisher</option>
+        <option value="ISBN">Isbn</option>
+    </select><br>
+
+    <button type="submit" name="submit" onclick="return check();">Search</button>
+</form>
+{% endblock %}

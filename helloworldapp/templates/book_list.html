@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}書籍一覧{% endblock %}
+
+{% block content %}
+<div class="modal-toggle btn-example" data-modal="{0}">
+    <div class = "card">
+        <div class="card-img"><img src="{0}" alt=""></div>
+        <div class="card-text">')
+            <p class = "shortcut1">{0}</p>
+            <p class = "shortcut1">{0}</p>
+            <p class = "shortcut">{0}</p>
+        </div>
+    </div>
+</div>
+
+<div id="{0}" class="modal">
+    <div class="modal-content">
+        <div class="modal-top">
+            <span class="modal-close">×</span>
+        </div>
+        <div class = "card2">
+            <div class="card2-img"><img src="{0}" alt=""></div>
+            <div class="card2-text">
+                <p>Title : {0}</p>
+                <p>Author : {0}</p>
+                <p>Publisher : {0}</p>
+                <p>Description : {0}</p>
+                <p>ISBN : {0}</p>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+<script>
+    const modalBtns = document.querySelectorAll(".modal-toggle");
+    modalBtns.forEach(function (btn) {
+        btn.onclick = function () {
+            var modal = btn.getAttribute('data-modal');
+            document.getElementById(modal).style.display = "block";
+        };
+    });
+    const closeBtns = document.querySelectorAll(".modal-close");
+    closeBtns.forEach(function (btn) {
+        btn.onclick = function () {
+            var modal = btn.closest('.modal');
+            modal.style.display = "none";
+        };
+    });
+
+    window.onclick = function (event) {
+        if (event.target.className === "modal") {
+            event.target.style.display = "none";
+        }
+    };
+</script>

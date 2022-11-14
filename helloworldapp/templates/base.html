@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+    <html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Book Search{% endblock %}</title>
+        
+        <head>
+            <link rel="stylesheet" type="text/css" href="https://jdueieiuruieie.herokuapp.com/test.css" />
+        </head>
+
+        <body>
+            <div class="wrapper">
+                <div id="slider">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script>
+
+            <script>
+                var windowwidth = window.innerWidth || document.documentElement.clientWidth || 0;
+                var responsiveImage = [{src : 'https://images.colorpea.com/f44acd911f7d45ceaa5f420a3ecc0d58_480.jpg'},
+                                       {src : 'https://images.colorpea.com/54448a14dd834123b61ad206fc93474b_480.jpg'},
+                                       {src : 'https://images.colorpea.com/5f9b3bb015d94a308c4d5538bc40f7e9_480.jpg'},];
+
+               $('#slider').vegas({
+                   overlay: true,
+                   transition: 'blur',
+                   transitionDuration: 2000,
+                   delay: 10000,
+                   animationDuration: 20000,
+                   animation: 'kenburns',
+                   slides: responsiveImage,
+               });
+            </script>
+        </body>
+    </html>
